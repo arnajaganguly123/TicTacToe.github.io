@@ -1,0 +1,181 @@
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@300&display=swap');
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: "Inconsolata",sans-serif;
+}
+body{
+	background: #D58A94;
+}
+.select-box, .play-board, .result-box{
+    position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	transition: all 0.3s ease;    
+}
+.select-box{
+	background: #ECC5C0;
+	padding: 	50px 65px 65px;
+	border-radius: 10px;
+	max-width: 330px;
+	width: 100%;
+}
+.select-box.hide{
+	opacity: 0;
+	pointer-events: none;
+	transform: translate(-50%, -50%) scale(0.9);
+}
+.select-box header{
+     font-size: 33px;
+     padding-bottom: 20px;
+     color: #0C090A;
+     font-weight: bolder;
+     position: relative;
+}
+.select-box .player{
+	display: flex;
+	width: 100%;
+}
+.player button{
+	width: 100%;
+	font-size: 20px;
+	font-weight: 200;
+	padding: 20px 0;
+	border: none;
+	outline: none;
+	background: #D58A94;
+	border-radius: 15px;
+	color: black;
+	cursor: pointer;
+	transition: all 0.3s ease;
+}
+.player button:hover,.result-box .btn button:hover{
+	transform: scale(1.2);
+}
+.player button.playerX{
+	margin-right: 5px;
+}
+.player button.player0{
+	margin-left: 5px;
+}
+.play-board{
+	opacity: 0;
+	pointer-events: none;
+	transform: translate(-50%, -50%) scale(0.9);
+}
+.play-board.show{
+	opacity: 1;
+	pointer-events: auto;
+	transform: translate(-50%, -50%) scale(1);
+}
+.play-board .details{
+	background: #ECC5C0;
+	padding: 7px;
+	border-radius: 5px;
+}
+.play-board .details .players{
+          display: flex;
+          width: 100%;
+          position: relative;
+          justify-content: space-between;
+}
+.play-board .details span{
+      color: black;
+      width: 100%;
+      border-radius: 5px;
+      padding: 7px 0;
+      font-size: 19px;
+      font-weight: 500;
+      cursor: default;
+      text-align: center;
+      border-radius: 5px;
+      position: relative;
+      z-index: 5;
+      transition: all 0.3s ease;
+}
+.details span:first-child{
+	color: black;
+}
+.details .slider{
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 50%;
+	background: #D58A94;
+	border-radius: 5px;
+	z-index: 2;
+	transition: all 0.3s ease;
+}
+.players.active span:first-child{
+   color: black;
+}
+.players.active span:nth-child(2){
+   color: black;
+}
+.players.active .slider{
+   left: 50%;
+}
+.play-board .play-area{
+    margin-top: 20px;	
+}
+.play-board section{
+	display: flex;
+}
+.play-board section span{
+	display: block;
+	margin: 2px;
+	height: 80px;
+	width: 80px;
+	background: #ECC5C0;
+	border-radius: 5px;
+	font-size: 40px;
+	text-align: center;
+	line-height: 80px;
+	color: #997070;
+}
+.result-box{
+	background: #ECC5C0;
+	padding: 20px;
+	border-radius: 5px;
+	max-width: 350px;
+	width: 100%;
+	opacity: 0;
+	pointer-events: none;
+	transform: translate(-50%, -50%) scale(1);
+}
+.result-box.show{
+	opacity: 1;
+	pointer-events: auto;
+	transform: translate(-50%, -50%) scale(1);
+}
+}
+.result-box .won-text{
+	font-size: 25px;
+	font-weight: 500;
+	display: flex;
+	justify-content: center;
+}
+.result-box .won-text p{
+	font-weight: 700;
+	margin: 0 3px;
+}
+.result-box .btn{
+	display: flex;
+	margin-top: 20px;
+	justify-content: center;
+}
+.result-box .btn button{
+	font-size: 22px;
+	font-weight: 500;
+	padding: 8px 20px;
+	border: none;
+	outline: none;
+	background: #D58A94;
+	border-radius: 15px;
+	color: black;
+	cursor: pointer;
+	transition: all 0.3s ease;
+}
